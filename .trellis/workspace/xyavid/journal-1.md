@@ -40,3 +40,36 @@ Astro + Tailwind CSS 静态博客 MVP，含首页、文章详情、关于页、4
 ### Next Steps
 
 - None - task complete
+
+
+## Session 2: Myblog 部署配置 + base 路径修复
+
+**Date**: 2026-05-08
+**Task**: Myblog 部署配置 + base 路径修复
+**Branch**: `master`
+
+### Summary
+
+添加 GitHub Actions 部署流程，修复 Astro base 路径问题，所有链接正确前缀。
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `758e0e6` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
