@@ -1,0 +1,4 @@
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "Quality checklist: lint, format, astro build must pass"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "Verify all frontmatter matches content.config.ts schema"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "Verify components follow patterns, no useState in .astro files"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "Verify 404 page exists, error boundaries are handled"}
