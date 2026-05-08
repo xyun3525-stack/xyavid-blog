@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 - Page Not Found - Myblog">
+  <div class="flex flex-col items-center justify-center py-24">
+    <h1 class="text-6xl font-bold text-neutral-200">404</h1>
+    <p class="mt-4 text-lg text-neutral-500">页面不存在</p>
+    <p class="mt-2 text-sm text-neutral-400">你访问的页面可能已被删除或地址有误。</p>
+    <a
+      href="/"
+      class="mt-8 inline-block rounded-lg bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white no-underline transition-colors hover:bg-neutral-700"
+    >
+      返回首页
+    </a>
+  </div>
+</BaseLayout>

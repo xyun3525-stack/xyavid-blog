@@ -1,0 +1,64 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const { getCollection } = await import('astro:content');
+  const posts = await getCollection('posts');
+  return posts
+    .filter((p) => !p.data.draft)
+    .map((p) => ({ params: { slug: p.id } }));
+}
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect('/404');
+}
+
+const post = await getEntry('posts', slug);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const { title, date, excerpt, tags } = post.data;
+const { Content } = await render(post);
+
+const formattedDate = date.toLocaleDateString('zh-CN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} - Myblog`} description={excerpt}>
+  <article>
+    <header class="mb-10">
+      <a href="/" class="inline-block text-sm text-neutral-400 no-underline hover:text-neutral-600 transition-colors">
+        &larr; 返回首页
+      </a>
+      <h1 class="mt-6 text-3xl font-bold text-neutral-900 leading-tight">
+        {title}
+      </h1>
+      <div class="mt-3 flex flex-wrap items-center gap-3 text-sm text-neutral-400">
+        <time datetime={date.toISOString()}>{formattedDate}</time>
+        {
+          tags && tags.length > 0 && (
+            <span class="flex flex-wrap gap-2">
+              {tags.map((tag: string) => (
+                <span class="rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs text-neutral-500">
+                  {tag}
+                </span>
+              ))}
+            </span>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
