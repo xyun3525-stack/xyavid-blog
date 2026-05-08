@@ -1,10 +1,39 @@
+---
+import SearchBar from "./SearchBar.astro";
+---
+
 <nav class="border-b border-neutral-200">
   <div class="mx-auto flex max-w-2xl items-center justify-between px-6 py-4">
-    <a href="/" class="text-lg font-semibold text-neutral-900 no-underline hover:text-neutral-600 transition-colors">
-      Myblog
+    <!-- Left: avatar + name -->
+    <a href="/" class="group flex items-center gap-3 no-underline">
+      <div class="relative flex-shrink-0">
+        <div
+          class="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 text-sm font-medium text-neutral-500 ring-2 ring-transparent transition-all group-hover:ring-neutral-200 group-hover:bg-neutral-200 group-hover:text-neutral-700"
+        >
+          x
+        </div>
+        <div
+          class="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-neutral-900 px-2.5 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none"
+        >
+          xyavid
+        </div>
+      </div>
+      <span
+        class="text-base font-medium text-neutral-800 transition-colors group-hover:text-neutral-600"
+      >
+        xyavid
+      </span>
     </a>
-    <a href="/about" class="text-sm text-neutral-500 no-underline hover:text-neutral-900 transition-colors">
-      About
-    </a>
+
+    <!-- Right: search + about -->
+    <div class="flex items-center gap-1">
+      <SearchBar />
+      <a
+        href="/about"
+        class="rounded-lg px-3 py-1.5 text-sm text-neutral-500 no-underline transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+      >
+        About
+      </a>
+    </div>
   </div>
 </nav>
