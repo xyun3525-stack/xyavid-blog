@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://xyavid.github.io',
+  base: '/myblog',
 
   vite: {
     plugins: [tailwindcss()],
