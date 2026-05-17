@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://xyavid.github.io',
-  base: '/myblog',
+  site: 'https://xyun3525-stack.github.io',
+  base: '/xyavid-blog',
 
   vite: {
     plugins: [tailwindcss()],
